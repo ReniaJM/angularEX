@@ -1,0 +1,12 @@
+<!--<p>{{loadState}}</p>-->
+<p [textContent] = "loadState"></p>
+<div>
+  <button (click)="changeState()">change</button>
+</div>
+<div>
+  <!--<input type="text" [(ngModel)]="loadState">-->
+  <input type="text" (input)="loadState = $event.target.value">
+  <!--przy tym doajemy w app.module do imports Formsmodule i na gorze impoert forms module-->
+
+</div>
+
