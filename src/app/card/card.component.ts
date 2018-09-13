@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import {Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,18 +6,28 @@ import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() items= [];
-  @Output() itemAdded = new EventEmitter<string>();
-  newItem= ''
+  @Input()
+  inputText:string;
 
-  constructor() { }
+  @Input()
+  inputDog:Dog;
 
-  ngOnInit() {
+  show = true;
+  // @Output()
+  // eventItem = new EventEmitter<string>();
+
+  ngOnInit():void {
   }
 
+  // select(item){
+  //   this.eventItem.emit(item);
+  //
+  // }
 
-  onAddItem(){
-    this.itemAdded.emit(this.newItem)
+  content(){
+    this.show =! this.show;
 
+    // nie rowna sie  =! tak samo sam !
   }
+
 }
