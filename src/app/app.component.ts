@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {CardComponent} from "./card/card.component";
 
 @Component({
@@ -18,7 +18,8 @@ export class AppComponent {
   }
 
   changeDog(){
-  this.dog.name= "sweety"
+  // this.dog.name= "Sweety"
+    this.dog= new Dog('sweety');
   }
 
   nothing(){
@@ -28,11 +29,12 @@ export class AppComponent {
   destoy(){
     this.show =! this.show;
   }
-  export class Dog {
+
+}
+export class Dog {
   constructor(public name:string){
 
   }
-}
 
   // rootName = 'Renia';
   // rootItems = ['apple', 'banana', 'cheeries'];
